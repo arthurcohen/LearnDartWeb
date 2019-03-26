@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+$break-small: 600px;
+$break-large: 1200px;
+
 html, body {
   width: 100%;
   height: 100%;
@@ -30,16 +33,57 @@ html, body {
 }
 
 .profile {
-    float: left;
-    width: calc(100% - 300px);
+    width: calc(100% - 280px);
+    display: inline-block;
+
+    img {
+        background-color: black;
+        border-radius: 50%;
+        margin: 20px;
+    }
+
+    @media screen and (min-width: $break-large){
+        
+        img {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+
+    @media screen and (max-width: $break-small){
+        width: 100%;
+        display: block;
+        
+        img {
+            width: 100%;
+        }
+    }
+
 }
 
 .resume {
     float: right;
     // position: absolute;
-    width: 300px;
+    width: 280px;
+    border-radius: 30px 0 0 30px;
     margin-top: 50vh;
     transform: translate(0, -50%);
     color: white;
     background-color: black;
+
+    @media screen and (max-width: $break-small) {
+        display: none;     
+    }
+
+    .content {
+        margin: 30px 10px 30px 30px;
+        line-height: 1.3em;
+        font-size: 1.5em;
+        font-weight: 300;
+        font-family: 'times';
+
+        .title {
+            font-size: 1.2em;
+        }
+    }
 }
